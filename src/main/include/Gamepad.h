@@ -84,15 +84,4 @@ class Gamepad{
 
         Joystick* _gamepad;
 
-        enum direction{
-            UP,
-            DOWN,
-            LEFT,
-            RIGHT,
-            UP_LEFT,
-            UP_RIGHT,
-            DOWN_LEFT,
-            DOWN_RIGHT
-        };
-
 };
