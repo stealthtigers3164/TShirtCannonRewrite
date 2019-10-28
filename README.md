@@ -46,9 +46,7 @@ git add <files you want to commit>
 git stage <files you want to commit>
 ```
 > If you want to check the status of your changes, you can use `git status`.  
-
 > Red files are unadded and will not be committed.  
-
 > Green files are added and will be committed.
 
 Next, in order to commit your files, you can use the following command:
