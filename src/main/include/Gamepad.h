@@ -7,9 +7,11 @@
 #pragma once
 
 #include <Joystick.h>
-#include <JoystickButton.h>
-#include <JoystickBase.h>
+#include <GenericHID.h>
 #include <iostream>
+#include <math.h>
+
+#define PI 3.14159265
 
 using namespace frc;
 
@@ -59,6 +61,7 @@ class Gamepad{
             return _gamepad->GetRawButton(10);
         }
 
+        //returns a float vector (x, y) for the left joystick
         const float* LeftJoystick(){
             float xAxis = _gamepad->GetX(frc::GenericHID::JoystickHand::kLeftHand);
             float yAxis = _gamepad->GetY(frc::GenericHID::JoystickHand::kLeftHand);
@@ -66,6 +69,7 @@ class Gamepad{
             return vector;
         }
 
+        //returns a float vector (x, y) for the right joystick
         const float* RightJoystick(){
             float xAxis = _gamepad->GetX(frc::GenericHID::JoystickHand::kRightHand);
             float yAxis = _gamepad->GetY(frc::GenericHID::JoystickHand::kRightHand);
@@ -74,9 +78,14 @@ class Gamepad{
         }
 
         //dpad logic
+        //returns a float vector (x, y) for the dpad state
         int* DPad(){
-            //logic
-            int vector[2]; // = get dpad axis TODO
+            float degrees = _gamepad.GetPOV();
+            //returns the value of the dpad direction
+            //rounded to the nearest integer value (-1, 0, 1)
+            int vecx = static_cast<int>(round(cos(degrees * PI/180)));
+            int vecy = static_cast<int>(round(sin(degrees * PI/180)));
+            int vector[2] = {vecx, vecy};
             return vector;
         }
     
