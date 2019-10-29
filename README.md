@@ -15,7 +15,7 @@ Setup
 > If you cloned the repository in the last step, you may skip this step
    ```bash
    git pull origin master
-   git pull origin untested
+   git pull origin dev
    ```  
 > This will make sure both of the club-wide branches are up to date.
 > If they are not up to date, you may end up with merge conflicts when you attempt to push code later.
