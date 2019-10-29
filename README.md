@@ -24,8 +24,8 @@ Setup
 > The branch name should be the same as your name (in lowercase).
 > Each member will have their own branch.  
    ```bash
-   git branch <your name>
-   git checkout <your name/branch name>
+   git branch your-name
+   git checkout your-name/branch-name
    ```
 
 Pushing Changes
@@ -39,19 +39,19 @@ Pushing consists of three steps:
 
 Adding/staging changes is fairly straightforward:  
 ```bash
-git add <files you want to commit>
+git add files-to-commit
 ```  
 **or**
 ```bash
-git stage <files you want to commit>
+git stage files-to-commit
 ```
 > If you want to check the status of your changes, you can use `git status`.  
-> Red files are unadded and will not be committed.  
-> Green files are added and will be committed.
+> Red files *are not* staged and *will not* be committed.  
+> Green files *are* staged and *will* be committed.
 
 Next, in order to commit your files, you can use the following command:
 ```bash
-git commit -m "<commit message>"
+git commit -m "commit message"
 ```
 > The `-m` flag is used to specify a commit message.
 > Any time you commit without a message, it will assign a generic default commit message to that commit.
@@ -65,11 +65,13 @@ Finally, pushing your changes is the only way for those changes to be reflected 
 > Therefore, I will be requiring you to push all of your changes, completed or not.  
 Before pushing, remember that you should be pushing to your branch only for the time being.
 ```bash
-git checkout <your branch>
+git checkout your-branch
 git push
 ```
+> `git checkout branch` will switch to the specified branch name, in this case the branch you created for this repository.  
+> Your state will change to mactch the state of the specified branch at the time of your last pulled.
 > This will ensure that you are always pushing to your branch.
-> For an added layer of certainty, you may also choose to instead use `git push origin <your branch>`.
+> For an added layer of certainty, you may also choose to instead use `git push origin your-branch`.  
 
 Club-Wide Branches
 ------------------
