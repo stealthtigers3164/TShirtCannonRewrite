@@ -31,25 +31,39 @@ Setup
 Pushing Changes
 ---------------
 
-**In order to push code to github, you *can* use vscode. However, I will be requiring you to learn basic git commands.**
-Pushing consists of three steps:  
+   **In order to push code to github, you *can* use vscode. However, I will be requiring you to learn basic git commands.**
+   Pushing consists of three steps:  
 - adding/staging your changes 
 - commiting your changes
 - pushing your changes to your branch
 
-Adding/staging changes is fairly straightforward:  
+   Adding/staging changes is fairly straightforward:  
 ```bash
-git add files-to-commit
+git add <files-to-commit>
 ```  
-**or**
+   **or**
 ```bash
-git stage files-to-commit
+git stage <files-to-commit>
 ```
 > If you want to check the status of your changes, you can use `git status`.  
 > Red files *are not* staged and *will not* be committed.  
 > Green files *are* staged and *will* be committed.
 
-Next, in order to commit your files, you can use the following command:
+   If you accidentally stage files that you weren't ready to commit, you can reset your current staged files using `git reset`.  
+```bash
+git reset HEAD <file>
+```
+> HEAD is the last commit on the current branch  
+   This command will unstage the file while maintaining any changes you made to it.
+
+   If you accidentally track files that you intended to add to the `.gitignore`, you can also remove those.
+```bash
+git rm <filename> --cache
+```
+> This command will clear the cache file, therefore removing any tracked files that should not be tracked.
+> The files will remain on your disk, however they will not be pushed to the repository.
+
+   Next, in order to commit your files, you can use the following command:
 ```bash
 git commit -m "commit message"
 ```
@@ -60,18 +74,19 @@ git commit -m "commit message"
 > Due to this, I would prefer if you avoid this command unless you absolutely mean to commit all changes.
 > Please stick to `git add` instead for now
 
-Finally, pushing your changes is the only way for those changes to be reflected in the public repository.
+   Finally, pushing your changes is the only way for those changes to be reflected in the public repository.
 > If you do not push, all of your choices will remain local.
 > Therefore, I will be requiring you to push all of your changes, completed or not.  
-Before pushing, remember that you should be pushing to your branch only for the time being.
+   Before pushing, remember that you should be pushing to your branch only for the time being.
 ```bash
-git checkout your-branch
+git checkout <your-branch>
 git push
 ```
 > `git checkout branch` will switch to the specified branch name, in this case the branch you created for this repository.  
-> Your state will change to mactch the state of the specified branch at the time of your last pulled.
-> This will ensure that you are always pushing to your branch.
-> For an added layer of certainty, you may also choose to instead use `git push origin your-branch`.  
+> Your state will change to match the state of the specified branch at the time of your last pulled.
+> Doing this will ensure that you are always pushing to your branch.
+> For an added layer of certainty, you may also choose to instead use `git push origin <your-branch>`, which will push your committed changes to the specifed branch.
+  
 
 Club-Wide Branches
 ------------------
