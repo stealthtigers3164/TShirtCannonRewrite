@@ -24,8 +24,8 @@ Setup
 > The branch name should be the same as your name (in lowercase).
 > Each member will have their own branch.  
    ```bash
-   git branch your-name
-   git checkout your-name/branch-name
+   git branch <your-name>
+   git checkout <your-name/branch-name>
    ```
 
 Pushing Changes
