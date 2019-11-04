@@ -80,7 +80,7 @@ class Gamepad{
         //dpad logic
         //returns a float vector (x, y) for the dpad state
         int* DPad(){
-            float degrees = _gamepad.GetPOV();
+            float degrees = _gamepad->GetPOV();
             //returns the value of the dpad direction
             //rounded to the nearest integer value (-1, 0, 1)
             int vecx = static_cast<int>(round(cos(degrees * PI/180)));
