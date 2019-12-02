@@ -8,7 +8,6 @@ Setup
 1. Create a local copy of the repository on your device  
 > If you have previously cloned the repository, you may skip this step  
    ```bash
-   git init
    git clone https://github.com/stealthtigers3164/TShirtCannonRewrite.git
    ```  
 2. If you have already cloned the repository, you should pull to make sure you are up to date  
